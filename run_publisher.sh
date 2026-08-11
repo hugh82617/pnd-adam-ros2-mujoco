@@ -1,2 +1,2 @@
 export ROS_LOCALHOST_ONLY=1
-ros2 run robot_state_publisher robot_state_publisher
+ros2 run pnd_joint_state_demo pnd_joint_state_publisher

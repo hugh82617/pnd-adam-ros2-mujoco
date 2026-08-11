@@ -1,0 +1,6 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: pnd_adam_description
+    relative_path: urdf/pnd_adam.urdf
+  SRDF:
+    relative_path: srdf/pnd_adam.srdf

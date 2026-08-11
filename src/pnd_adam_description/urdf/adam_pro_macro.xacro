@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="adam_pro_macro">
+  <!-- Reusable mesh visual macro for generated Adam Pro links. -->
+  <xacro:macro name="adam_pro_mesh_visual" params="filename scale">
+    <visual>
+      <geometry>
+        <mesh filename="${filename}" scale="${scale}"/>
+      </geometry>
+    </visual>
+  </xacro:macro>
+</robot>

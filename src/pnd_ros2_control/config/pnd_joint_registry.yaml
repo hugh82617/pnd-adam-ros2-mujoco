@@ -1,0 +1,57 @@
+robot:
+  name: adam_pro
+
+body:
+  default:
+    command_interface: [position]
+    state_interface: [position, velocity, effort]
+  joints:
+    - {sdk_name: LeftHipPitch, ros_name: left_hip_pitch_joint, sdk: 0, ctrl: 0, group: left_leg, kp: 305, kd: 6.1}
+    - {sdk_name: LeftHipRoll, ros_name: left_hip_roll_joint, sdk: 1, ctrl: 1, group: left_leg, kp: 700, kd: 30}
+    - {sdk_name: LeftHipYaw, ros_name: left_hip_yaw_joint, sdk: 2, ctrl: 2, group: left_leg, kp: 405, kd: 6.1}
+    - {sdk_name: LeftKnee, ros_name: left_knee_pitch_joint, sdk: 3, ctrl: 3, group: left_leg, kp: 305, kd: 6.1}
+    - {sdk_name: LeftAnklePitch, ros_name: left_ankle_pitch_joint, sdk: 4, ctrl: 4, group: left_leg, kp: 30, kd: 2.25}
+    - {sdk_name: LeftAnkleRoll, ros_name: left_ankle_roll_joint, sdk: 5, ctrl: 5, group: left_leg, kp: 0, kd: 0.25}
+    - {sdk_name: RightHipPitch, ros_name: right_hip_pitch_joint, sdk: 6, ctrl: 6, group: right_leg, kp: 305, kd: 6.1}
+    - {sdk_name: RightHipRoll, ros_name: right_hip_roll_joint, sdk: 7, ctrl: 7, group: right_leg, kp: 700, kd: 30}
+    - {sdk_name: RightHipYaw, ros_name: right_hip_yaw_joint, sdk: 8, ctrl: 8, group: right_leg, kp: 405, kd: 6.1}
+    - {sdk_name: RightKnee, ros_name: right_knee_pitch_joint, sdk: 9, ctrl: 9, group: right_leg, kp: 305, kd: 6.1}
+    - {sdk_name: RightAnklePitch, ros_name: right_ankle_pitch_joint, sdk: 10, ctrl: 10, group: right_leg, kp: 30, kd: 2.25}
+    - {sdk_name: RightAnkleRoll, ros_name: right_ankle_roll_joint, sdk: 11, ctrl: 11, group: right_leg, kp: 0, kd: 0.25}
+    - {sdk_name: WaistYaw, ros_name: waist_yaw_joint, sdk: 12, ctrl: 14, group: torso, kp: 205, kd: 4.1}
+    - {sdk_name: WaistRoll, ros_name: waist_roll_joint, sdk: 13, ctrl: 12, group: torso, kp: 405, kd: 6.1}
+    - {sdk_name: WaistPitch, ros_name: waist_pitch_joint, sdk: 14, ctrl: 13, group: torso, kp: 405, kd: 6.1}
+    - {sdk_name: LeftShoulderPitch, ros_name: left_shoulder_pitch_joint, sdk: 15, ctrl: 15, group: left_arm, kp: 18, kd: 0.9}
+    - {sdk_name: LeftShoulderRoll, ros_name: left_shoulder_roll_joint, sdk: 16, ctrl: 16, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: LeftShoulderYaw, ros_name: left_shoulder_yaw_joint, sdk: 17, ctrl: 17, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: LeftElbow, ros_name: left_elbow_joint, sdk: 18, ctrl: 18, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: LeftWristRoll, ros_name: left_wrist_roll_joint, sdk: 19, ctrl: 21, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: LeftWristPitch, ros_name: left_wrist_pitch_joint, sdk: 20, ctrl: 20, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: LeftWristYaw, ros_name: left_wrist_yaw_joint, sdk: 21, ctrl: 19, group: left_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightShoulderPitch, ros_name: right_shoulder_pitch_joint, sdk: 22, ctrl: 22, group: right_arm, kp: 18, kd: 0.9}
+    - {sdk_name: RightShoulderRoll, ros_name: right_shoulder_roll_joint, sdk: 23, ctrl: 23, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightShoulderYaw, ros_name: right_shoulder_yaw_joint, sdk: 24, ctrl: 24, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightElbow, ros_name: right_elbow_joint, sdk: 25, ctrl: 25, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightWristRoll, ros_name: right_wrist_roll_joint, sdk: 26, ctrl: 28, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightWristPitch, ros_name: right_wrist_pitch_joint, sdk: 27, ctrl: 27, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: RightWristYaw, ros_name: right_wrist_yaw_joint, sdk: 28, ctrl: 26, group: right_arm, kp: 9, kd: 0.9}
+    - {sdk_name: HeadYaw, ros_name: head_yaw_joint, sdk: 29, ctrl: 29, group: head, kp: 40, kd: 1}
+    - {sdk_name: HeadPitch, ros_name: head_pitch_joint, sdk: 30, ctrl: 30, group: head, kp: 40, kd: 1}
+
+hands:
+  default:
+    command_interface: [position]
+    state_interface: [position]
+  joints:
+    - {ros_name: left_pinky_joint, hand_index: 0}
+    - {ros_name: left_ring_joint, hand_index: 1}
+    - {ros_name: left_middle_joint, hand_index: 2}
+    - {ros_name: left_index_joint, hand_index: 3}
+    - {ros_name: left_thumb_joint, hand_index: 4}
+    - {ros_name: left_thumb_lateral_joint, hand_index: 5}
+    - {ros_name: right_pinky_joint, hand_index: 6}
+    - {ros_name: right_ring_joint, hand_index: 7}
+    - {ros_name: right_middle_joint, hand_index: 8}
+    - {ros_name: right_index_joint, hand_index: 9}
+    - {ros_name: right_thumb_joint, hand_index: 10}
+    - {ros_name: right_thumb_lateral_joint, hand_index: 11}

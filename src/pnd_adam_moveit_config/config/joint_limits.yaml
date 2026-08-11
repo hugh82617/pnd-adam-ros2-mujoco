@@ -1,0 +1,187 @@
+joint_limits:
+  left_hip_pitch_joint:
+    has_position_limits: true
+    min_position: -2.164
+    max_position: 2.164
+    max_velocity: 5.0
+    max_effort: 230.0
+  left_hip_roll_joint:
+    has_position_limits: true
+    min_position: -0.733
+    max_position: 1.605
+    max_velocity: 5.0
+    max_effort: 160.0
+  left_hip_yaw_joint:
+    has_position_limits: true
+    min_position: -0.785
+    max_position: 0.785
+    max_velocity: 5.0
+    max_effort: 105.0
+  left_knee_pitch_joint:
+    has_position_limits: true
+    min_position: 0.052
+    max_position: 2.391
+    max_velocity: 5.0
+    max_effort: 230.0
+  left_ankle_pitch_joint:
+    has_position_limits: true
+    min_position: -1.0
+    max_position: 0.35
+    max_velocity: 5.0
+    max_effort: 40.0
+  left_ankle_roll_joint:
+    has_position_limits: true
+    min_position: -0.3491
+    max_position: 0.3491
+    max_velocity: 5.0
+    max_effort: 12.0
+  right_hip_pitch_joint:
+    has_position_limits: true
+    min_position: -2.164
+    max_position: 2.164
+    max_velocity: 5.0
+    max_effort: 230.0
+  right_hip_roll_joint:
+    has_position_limits: true
+    min_position: -1.605
+    max_position: 0.733
+    max_velocity: 5.0
+    max_effort: 160.0
+  right_hip_yaw_joint:
+    has_position_limits: true
+    min_position: -0.785
+    max_position: 0.785
+    max_velocity: 5.0
+    max_effort: 105.0
+  right_knee_pitch_joint:
+    has_position_limits: true
+    min_position: 0.052
+    max_position: 2.391
+    max_velocity: 5.0
+    max_effort: 230.0
+  right_ankle_pitch_joint:
+    has_position_limits: true
+    min_position: -1.0
+    max_position: 0.35
+    max_velocity: 5.0
+    max_effort: 40.0
+  right_ankle_roll_joint:
+    has_position_limits: true
+    min_position: -0.3491
+    max_position: 0.3491
+    max_velocity: 5.0
+    max_effort: 12.0
+  waist_roll_joint:
+    has_position_limits: true
+    min_position: -0.279
+    max_position: 0.279
+    max_velocity: 5.0
+    max_effort: 110.0
+  waist_pitch_joint:
+    has_position_limits: true
+    min_position: -0.663
+    max_position: 1.361
+    max_velocity: 5.0
+    max_effort: 110.0
+  waist_yaw_joint:
+    has_position_limits: true
+    min_position: -0.829
+    max_position: 0.829
+    max_velocity: 5.0
+    max_effort: 110.0
+  left_shoulder_pitch_joint:
+    has_position_limits: true
+    min_position: -3.613
+    max_position: 2.042
+    max_velocity: 5.0
+    max_effort: 65.0
+  left_shoulder_roll_joint:
+    has_position_limits: true
+    min_position: -0.628
+    max_position: 2.793
+    max_velocity: 5.0
+    max_effort: 65.0
+  left_shoulder_yaw_joint:
+    has_position_limits: true
+    min_position: -2.583
+    max_position: 2.583
+    max_velocity: 5.0
+    max_effort: 65.0
+  left_elbow_joint:
+    has_position_limits: true
+    min_position: -2.496
+    max_position: 0.209
+    max_velocity: 5.0
+    max_effort: 30.0
+  left_wrist_yaw_joint:
+    has_position_limits: true
+    min_position: -2.67
+    max_position: 2.67
+    max_velocity: 5.0
+    max_effort: 6.4
+  left_wrist_pitch_joint:
+    has_position_limits: true
+    min_position: -0.96
+    max_position: 0.96
+    max_velocity: 5.0
+    max_effort: 6.4
+  left_wrist_roll_joint:
+    has_position_limits: true
+    min_position: -0.96
+    max_position: 0.96
+    max_velocity: 5.0
+    max_effort: 6.4
+  right_shoulder_pitch_joint:
+    has_position_limits: true
+    min_position: -3.613
+    max_position: 2.042
+    max_velocity: 5.0
+    max_effort: 65.0
+  right_shoulder_roll_joint:
+    has_position_limits: true
+    min_position: -2.793
+    max_position: 0.628
+    max_velocity: 5.0
+    max_effort: 65.0
+  right_shoulder_yaw_joint:
+    has_position_limits: true
+    min_position: -2.583
+    max_position: 2.583
+    max_velocity: 5.0
+    max_effort: 65.0
+  right_elbow_joint:
+    has_position_limits: true
+    min_position: -2.496
+    max_position: 0.209
+    max_velocity: 5.0
+    max_effort: 30.0
+  right_wrist_yaw_joint:
+    has_position_limits: true
+    min_position: -2.67
+    max_position: 2.67
+    max_velocity: 5.0
+    max_effort: 6.4
+  right_wrist_pitch_joint:
+    has_position_limits: true
+    min_position: -0.96
+    max_position: 0.96
+    max_velocity: 5.0
+    max_effort: 6.4
+  right_wrist_roll_joint:
+    has_position_limits: true
+    min_position: -0.96
+    max_position: 0.96
+    max_velocity: 5.0
+    max_effort: 6.4
+  head_yaw_joint:
+    has_position_limits: true
+    min_position: -1.571
+    max_position: 1.571
+    max_velocity: 5.0
+    max_effort: 6.4
+  head_pitch_joint:
+    has_position_limits: true
+    min_position: -0.873
+    max_position: 0.873
+    max_velocity: 5.0
+    max_effort: 6.4
