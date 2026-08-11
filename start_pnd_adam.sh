@@ -2,7 +2,7 @@
 set -u
 
 ROOT="$HOME/pnd_adam_ros2_publish"
-SIM_DIR="$HOME/pnd_mujoco/simulate_python"
+SIM_DIR="$ROOT/pnd_mujoco/simulate_python"
 LOG_DIR="${PND_LOG_DIR:-/tmp}"
 PIDS=()
 export ROOT SIM_DIR

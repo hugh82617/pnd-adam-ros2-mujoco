@@ -1,0 +1,1 @@
+# Legacy ROS2 demo packages are intentionally excluded from colcon builds.

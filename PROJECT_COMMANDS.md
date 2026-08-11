@@ -2,6 +2,15 @@
 
 本文档整合 `start_pnd_adam.sh` 的启动流程、脚本展开说明、常用修改命令和验证命令。
 
+## 文档索引
+
+- [README.md](README.md)：项目说明与在其他电脑上复现
+- [PROJECT_STATUS.md](PROJECT_STATUS.md)：当前状态和已知问题
+- [ARCHITECTURE.md](ARCHITECTURE.md)：系统架构
+- [JOINT_LIMIT_AUDIT.md](JOINT_LIMIT_AUDIT.md)：关节限位审计
+
+`legacy/` 存放旧版官方 demo 和废弃脚本，不参与当前 MuJoCo + ROS2 + MoveIt2 控制链路。
+
 ## 1. 一键启动/停止
 
 ```bash
@@ -18,7 +27,7 @@ bash ~/pnd_adam_ros2_publish/start_pnd_adam.sh
 终端 1：
 
 ```bash
-cd ~/pnd_mujoco/simulate_python
+cd ~/pnd_adam_ros2_publish/pnd_mujoco/simulate_python
 python3 pnd_mujoco.py
 ```
 
@@ -52,7 +61,7 @@ tail -f /tmp/pnd_mujoco.log /tmp/pnd_ros2_control.log /tmp/pnd_moveit.log
 也可以自定义日志目录：
 
 ```bash
-PND_LOG_DIR=/home/zch/pnd_logs bash ~/pnd_adam_ros2_publish/start_pnd_adam.sh
+PND_LOG_DIR=~/pnd_logs bash ~/pnd_adam_ros2_publish/start_pnd_adam.sh
 ```
 
 ## 2. start_pnd_adam.sh 脚本原文
@@ -62,7 +71,7 @@ PND_LOG_DIR=/home/zch/pnd_logs bash ~/pnd_adam_ros2_publish/start_pnd_adam.sh
 set -u
 
 ROOT="$HOME/pnd_adam_ros2_publish"
-SIM_DIR="$HOME/pnd_mujoco/simulate_python"
+SIM_DIR="$ROOT/pnd_mujoco/simulate_python"
 LOG_DIR="${PND_LOG_DIR:-/tmp}"
 PIDS=()
 export ROOT SIM_DIR
@@ -149,7 +158,7 @@ tail -f \
 脚本实际执行：
 
 ```bash
-cd ~/pnd_mujoco/simulate_python
+cd ~/pnd_adam_ros2_publish/pnd_mujoco/simulate_python
 python3 pnd_mujoco.py
 ```
 
@@ -216,7 +225,7 @@ MoveIt/RViz
 终端 1：
 
 ```bash
-cd ~/pnd_mujoco/simulate_python
+cd ~/pnd_adam_ros2_publish/pnd_mujoco/simulate_python
 python3 pnd_mujoco.py
 ```
 
@@ -261,7 +270,7 @@ You can start planning now!
 当前仿真场景不是命令行参数，而是改 `config.py`：
 
 ```bash
-nano ~/pnd_mujoco/simulate_python/config.py
+nano ~/pnd_adam_ros2_publish/pnd_mujoco/simulate_python/config.py
 ```
 
 找到：
@@ -279,7 +288,7 @@ ROBOT_SCENE = "adam_pro_pulse_scene.xml"
 也可以直接执行：
 
 ```bash
-sed -i 's/^ROBOT_SCENE = .*/ROBOT_SCENE = "adam_pro_pulse_scene.xml"/' ~/pnd_mujoco/simulate_python/config.py
+sed -i 's/^ROBOT_SCENE = .*/ROBOT_SCENE = "adam_pro_pulse_scene.xml"/' ~/pnd_adam_ros2_publish/pnd_mujoco/simulate_python/config.py
 ```
 
 改完必须重新执行 `start_pnd_adam.sh`。
@@ -311,20 +320,20 @@ source install/setup.bash
 ## 10. 常用修改位置
 
 - 空闲保位增益：
-  `/home/zch/pnd_adam_ros2_publish/src/pnd_ros2_control/launch/pnd_control.launch.py`
+  `~/pnd_adam_ros2_publish/src/pnd_ros2_control/launch/pnd_control.launch.py`
   修改 `idle_kp`、`idle_kd`。
 
 - 关节映射、电机顺序、默认 Kp/Kd：
-  `/home/zch/pnd_adam_ros2_publish/src/pnd_ros2_control/config/pnd_joint_registry.yaml`
+  `~/pnd_adam_ros2_publish/src/pnd_ros2_control/config/pnd_joint_registry.yaml`
 
 - MoveIt 关节限位：
-  `/home/zch/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/joint_limits.yaml`
+  `~/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/joint_limits.yaml`
 
 - MoveIt IK 配置：
-  `/home/zch/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/kinematics.yaml`
+  `~/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/kinematics.yaml`
 
 - MoveIt 控制器映射：
-  `/home/zch/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/moveit_controllers.yaml`
+  `~/pnd_adam_ros2_publish/src/pnd_adam_moveit_config/config/moveit_controllers.yaml`
 
 ## 11. 重新生成 URDF/SRDF
 

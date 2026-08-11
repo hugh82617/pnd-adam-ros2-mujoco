@@ -2,6 +2,17 @@ from pnd_ros2_control.pnd_command_interface import PndCommandInterface
 from pnd_ros2_control.pnd_joint_registry import load_registry
 
 
+def test_registry_has_31_body_and_12_hand_joints():
+    registry = load_registry()
+    body = registry["body"]["joints"]
+    hands = registry["hands"]["joints"]
+
+    assert len(body) == 31
+    assert len(hands) == 12
+    assert len({j["ros_name"] for j in body}) == 31
+    assert len({j["ros_name"] for j in hands}) == 12
+
+
 def test_lowcmd_uses_registry_mapping_and_hold_state():
     cmd_iface = PndCommandInterface(load_registry())
     for joint in cmd_iface.body_joints:

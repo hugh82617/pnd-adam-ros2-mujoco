@@ -47,6 +47,13 @@ Thumbs.db
 frames_*.gv
 frames_*.pdf
 
+# MuJoCo generated / large files
+*.mjb
+MJMODEL.TXT
+MJDATA.TXT
+MUJOCO_LOG.TXT
+*.bak
+
 # Credentials and secrets
 .env
 .env.*

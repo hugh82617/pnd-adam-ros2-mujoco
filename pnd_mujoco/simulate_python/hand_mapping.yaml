@@ -1,0 +1,80 @@
+# Ordered HandCmd/HandState 12-DOF mapping to MuJoCo finger joints.
+# Position order matches pnd_sdk_python examples and local tests:
+# left [pinky, ring, middle, index, thumb, thumb_lateral], then right.
+hand_position_groups:
+  - name: left_pinky
+    kind: standard
+    joints:
+      - L_pinky_DIP_joint
+      - L_pinky_MCP_joint
+  - name: left_ring
+    kind: standard
+    joints:
+      - L_ring_DIP_joint
+      - L_ring_MCP_joint
+  - name: left_middle
+    kind: standard
+    joints:
+      - L_middle_DIP_joint
+      - L_middle_MCP_joint
+  - name: left_index
+    kind: standard
+    joints:
+      - L_index_DIP_joint
+      - L_index_MCP_joint
+  - name: left_thumb
+    kind: thumb
+    joints:
+      - L_thumb_DIP_joint
+      - L_thumb_PIP_joint
+  - name: left_thumb_lateral
+    kind: thumb_lateral
+    joints:
+      - L_thumb_MCP_joint2
+      - L_thumb_MCP_joint1
+  - name: right_pinky
+    kind: standard
+    joints:
+      - R_pinky_DIP_joint
+      - R_pinky_MCP_joint
+  - name: right_ring
+    kind: standard
+    joints:
+      - R_ring_DIP_joint
+      - R_ring_MCP_joint
+  - name: right_middle
+    kind: standard
+    joints:
+      - R_middle_DIP_joint
+      - R_middle_MCP_joint
+  - name: right_index
+    kind: standard
+    joints:
+      - R_index_DIP_joint
+      - R_index_MCP_joint
+  - name: right_thumb
+    kind: thumb
+    joints:
+      - R_thumb_DIP_joint
+      - R_thumb_PIP_joint
+  - name: right_thumb_lateral
+    kind: thumb_lateral
+    joints:
+      - R_thumb_MCP_joint2
+      - R_thumb_MCP_joint1
+
+conversion:
+  standard:
+    q_open: 1.6
+    raw_open: 0
+    raw_closed: 1000
+  thumb:
+    q_open: 1.0
+    raw_open: 0
+    raw_closed: 1000
+  thumb_lateral:
+    q_open: 1.0
+    raw_open: 0
+    raw_closed: 1000
+
+watchdog_timeout_ms: 100
