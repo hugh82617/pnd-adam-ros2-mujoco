@@ -1,11 +1,36 @@
 #!/usr/bin/env bash
 set -u
 
-ROOT="$HOME/pnd_adam_ros2_publish"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SIM_DIR="$ROOT/pnd_mujoco/simulate_python"
 LOG_DIR="${PND_LOG_DIR:-/tmp}"
 PIDS=()
 export ROOT SIM_DIR
+
+if [ ! -f /opt/ros/humble/setup.bash ]; then
+  echo "ROS 2 Humble was not found at /opt/ros/humble/setup.bash" >&2
+  exit 1
+fi
+if [ ! -f "$ROOT/install/setup.bash" ]; then
+  echo "Workspace is not built. Run: bash scripts/setup_environment.sh" >&2
+  exit 1
+fi
+if [ ! -f "$SIM_DIR/pnd_mujoco.py" ]; then
+  echo "MuJoCo entry point was not found: $SIM_DIR/pnd_mujoco.py" >&2
+  exit 1
+fi
+if ! command -v setsid >/dev/null 2>&1; then
+  echo "setsid is required (Ubuntu package: util-linux)." >&2
+  exit 1
+fi
+mkdir -p "$LOG_DIR" || exit 1
+
+# ROS setup scripts may reference unset variables. Load them before starting
+# MuJoCo as well, since the simulator imports rclpy even in DDS mode.
+set +u
+source /opt/ros/humble/setup.bash || exit 1
+source "$ROOT/install/setup.bash" || exit 1
+set -u
 
 cleanup() {
   echo ""

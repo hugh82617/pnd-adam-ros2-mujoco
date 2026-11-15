@@ -15,6 +15,7 @@ sudo apt-get update
 sudo apt-get install -y \
   python3-pip \
   python3-yaml \
+  python3-colcon-common-extensions \
   libyaml-cpp-dev \
   libspdlog-dev \
   libboost-all-dev \
@@ -26,14 +27,21 @@ sudo apt-get install -y \
   ros-humble-moveit-planners-chomp \
   ros-humble-pilz-industrial-motion-planner \
   ros-humble-xacro \
-  ros-humble-robot-state-publisher
+  ros-humble-robot-state-publisher \
+  ros-humble-rviz2 \
+  ros-humble-tf2-ros \
+  ros-humble-control-msgs \
+  ros-humble-trajectory-msgs \
+  ros-humble-sensor-msgs
 
 echo "[2/4] Installing Python dependencies..."
 python3 -m pip install --user -r requirements.txt
 python3 -m pip install --user -e ./pnd_sdk_python
 
 echo "[3/4] Building ROS2 workspace..."
+set +u
 source /opt/ros/humble/setup.bash
+set -u
 colcon build --packages-select pnd_adam_description pnd_ros2_control pnd_adam_moveit_config
 
 echo "[4/4] Done."

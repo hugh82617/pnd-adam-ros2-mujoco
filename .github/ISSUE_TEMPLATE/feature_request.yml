@@ -1,0 +1,17 @@
+name: 功能与文档建议
+description: 提出具体场景和希望改进的行为
+title: "[Feature] "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: 使用场景与问题
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议的改进
+      description: 请说明预期行为、涉及模块和可行的验证方式。
+    validations:
+      required: true

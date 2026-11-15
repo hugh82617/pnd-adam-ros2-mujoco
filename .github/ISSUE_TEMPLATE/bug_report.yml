@@ -1,0 +1,30 @@
+name: 运行与复现问题
+description: 报告安装、启动、规划或执行问题
+title: "[Bug] "
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境与版本
+      description: 请填写 commit、Ubuntu、ROS、Python 与主要依赖版本。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现命令与步骤
+      description: 请包含运行目录和修改过的配置。
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: 期望行为与实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 相关日志
+      description: 请附 MuJoCo、ROS 控制层或 MoveIt 日志中的对应错误。
+      render: text
